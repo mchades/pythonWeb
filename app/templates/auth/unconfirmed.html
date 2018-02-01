@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky - Confirm your count{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+	<h1>你好，{{current_user.uername}}</h1>
+</div>
+<div class="col-md-4">
+	<p>
+	你还没有进行邮箱账户确认
+	</p>
+	<p>
+		需要再次发送注册邮件
+		<a href="{{ url_for('main.index') }}">
+			点击发送
+		</a>
+	</p>
+</div>
+{% endblock %}

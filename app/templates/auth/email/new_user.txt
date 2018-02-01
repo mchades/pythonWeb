@@ -1,0 +1,3 @@
+尊敬的 {{ user.username }},
+点击以下链接确认注册：
+{{ url_for('auth.confirm', token=token, _external=True) }}
