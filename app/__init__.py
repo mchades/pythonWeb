@@ -1,11 +1,13 @@
 ﻿
 from flask import Flask, render_template
 from flask.ext.bootstrap import Bootstrap
+from flask.ext.pagedown import PageDown
 from flask.ext.mail import Mail
 from flask.ext.moment import Moment
 from flask.ext.sqlalchemy import SQLAlchemy
 from config import config
 from flask.ext.login import LoginManager
+
 
 #初始化Flask-Login
 login_manager = LoginManager()
@@ -15,6 +17,7 @@ login_manager.login_view='auth.login'
 bootstrap = Bootstrap()
 mail = Mail()
 moment = Moment()
+pagedown = PageDown()
 db = SQLAlchemy()
 
 def create_app(config_name):
@@ -26,6 +29,7 @@ def create_app(config_name):
     bootstrap.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
+    pagedown.init_app(app)
     db.init_app(app)
     
     @app.errorhandler(404)
